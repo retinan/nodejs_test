@@ -1,0 +1,23 @@
+{
+  "name": "node_mysql_2_git",
+  "version": "1.0.0",
+  "description": "nodejs test first init",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/retinan/nodejs_test.git"
+  },
+  "author": "retin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/retinan/nodejs_test/issues"
+  },
+  "homepage": "https://github.com/retinan/nodejs_test#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "exrpess": "0.0.1-security"
+  }
+}
