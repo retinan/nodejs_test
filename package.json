@@ -17,8 +17,11 @@
   },
   "homepage": "https://github.com/retinan/nodejs_test#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "exrpess": "0.0.1-security",
-    "nunjucks": "^3.2.1"
+    "mysql2": "^2.1.0",
+    "nunjucks": "^3.2.1",
+    "sequelize": "^4.42.0"
   }
 }

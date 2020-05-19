@@ -1,5 +1,17 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
+
+const db = require('./models');
+
+db.sequelize.authenticate().then(() => {
+    console.log('Connection has been estalished successfully.');
+}).then(() => {
+    console.log('DB Sync complete.');
+}).catch( err => {
+    console.error('Unable to connect to the database:', err);
+});
+
+
 const admin = require('./routes/admin');
 const app = express();
 const port = 3000;
