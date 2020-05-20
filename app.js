@@ -1,5 +1,7 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
+const logger = require('morgan');
+const bodyParser = require('body-parser');
 
 const db = require('./models');
 
@@ -22,11 +24,16 @@ nunjucks.configure('template', {
     express: app
 })
 
+// middleware setting
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+// 
+
+// Routing
 app.get('/', (req, res) => {
     res.send('first test app');
 });
-
-// Routing
 app.use('/admin', admin);
 
 
