@@ -24,4 +24,10 @@ router.post('/products/write', (req, res) => {
     });
 });
 
+router.get('/products/detail/:id', (req, res) => {
+    models.Products.findByPk(req.params.id).then((product) => {
+        res.render('admin/detail.html', {product:product});
+    });
+});
+
 module.exports = router;
