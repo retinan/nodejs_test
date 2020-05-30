@@ -20,7 +20,7 @@ router.post('/products/write', (req, res) => {
        price: req.body.price,
        description: req.body.description 
     }).then(() => {
-        res.redirect('/admin');
+        res.redirect('/products');
     });
 });
 
@@ -47,6 +47,16 @@ router.post('/products/edit/:id', (req, res) => {
     }
     ).then(() => {
         res.redirect('/admin/products/detail/' + req.params.id);
+    });
+});
+
+router.get('/products/delete/:id', (req, res) => {
+    models.Products.destroy({
+        where: {
+            id: req.params.id
+        }
+    }).then(() => {
+        res.redirect('/admin/products');
     });
 });
 
