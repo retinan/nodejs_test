@@ -30,4 +30,25 @@ router.get('/products/detail/:id', (req, res) => {
     });
 });
 
+router.get('/products/edit/:id', (req, res) => {
+    models.Products.findByPk(req.params.id).then((product) => {
+        res.render('admin/form.html', {product:product});
+    });
+});
+
+router.post('/products/edit/:id', (req, res) => {
+    models.Products.update({
+       name: req.body.name,
+       price: req.body.price,
+       description: req.body.description 
+    },
+    {
+        where : { id: req.params.id }
+    }
+    ).then(() => {
+        res.redirect('/admin/products/detail/' + req.params.id);
+    });
+});
+
+
 module.exports = router;
